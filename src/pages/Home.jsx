@@ -1,11 +1,12 @@
 // src/pages/Home.jsx
 import React from 'react';
 import Banner from '../components/Banner';
-import CardList from '../components/CardList';
 import '../styles/Home.scss';
 import bannerImage from "../assets/IMG.png";
 import logements from "../data/logements.json";
 import '../styles/Card.scss'
+import Card from "../components/Card"
+
 
 export default function Home() {
   return (
@@ -19,8 +20,17 @@ export default function Home() {
 
       {/* Liste de logements sous forme de cartes */}
       <section className="gallery-section">
-      <CardList logements={logements} />
-      </section>
+      {/* <CardList logements={logements} /> */}
+
+      {/* <section className="cardlist"> */}
+      {logements.map((logement) => (
+        <Card key={logement.id} logement={logement}/>
+      ))}
+    </section>
+      
+      {/* </section> */}
+
+      
     </main>
   );
 }
