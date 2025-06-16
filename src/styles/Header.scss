@@ -1,0 +1,28 @@
+// src/styles/Header.scss
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  &__logo {
+    height: 68px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #ff6060;
+    font-size: 18px;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}

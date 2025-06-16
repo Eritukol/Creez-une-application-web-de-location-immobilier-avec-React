@@ -1,0 +1,16 @@
+// Reset de base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Corps du site
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

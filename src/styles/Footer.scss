@@ -1,0 +1,18 @@
+// src/styles/Footer.scss
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+
+  &__logo {
+    height: 40px;
+    filter: brightness(0) saturate(100%) invert(1);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+}

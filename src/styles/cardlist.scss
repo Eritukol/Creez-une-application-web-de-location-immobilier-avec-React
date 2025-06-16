@@ -1,0 +1,12 @@
+.cardlist {
+  display: flex;
+  flex-wrap: wrap; // Retourne à la ligne quand il n’y a plus de place
+  justify-content: center; // Centre les cartes horizontalement
+  gap: 30px; // Espace entre les cartes
+  padding: 40px;
+  background-color: #f7f7f7; // Fond clair de la galerie
+
+  // Pour que la galerie prenne toute la largeur disponible
+  max-width: 1240px;
+  margin: 0 auto;
+}
