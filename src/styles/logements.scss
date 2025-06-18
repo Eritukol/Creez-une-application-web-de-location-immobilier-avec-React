@@ -1,86 +1,99 @@
-/* logements.scss */
-
-.logement-container {
+.logement {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 40px 20px;
   max-width: 1240px;
   margin: 0 auto;
-}
 
-.logement-banner {
-  width: 100%;
-  height: 250px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.logement-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
+  &__banner {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
   }
-}
 
-.logement-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-  color: #ff6060;
-}
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.logement-location {
-  font-size: 16px;
-  margin-top: 5px;
-  color: #000;
-}
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
 
-.logement-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #ff6060;
+  }
 
-.logement-tag {
-  background-color: #ff6060;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-}
+  &__location {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #000;
+  }
 
-.logement-host {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 
-.host-name {
-  font-size: 16px;
-  font-weight: 500;
-  color: #ff6060;
-}
+    &-item {
+      background-color: #ff6060;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
 
-.host-picture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+  &__host {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-.logement-rating {
-  display: flex;
-  gap: 5px;
-  margin-top: 10px;
-}
+    &-name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ff6060;
+    }
 
-.star {
-  width: 20px;
-  height: 20px;
+    &-picture {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+
+    .star {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__description,
+  &__equipments {
+    margin-top: 20px;
+
+    h2 {
+      font-size: 18px;
+      color: #ff6060;
+    }
+
+    p,
+    ul {
+      margin-top: 10px;
+    }
+  }
 }
