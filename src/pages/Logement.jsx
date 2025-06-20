@@ -1,16 +1,26 @@
-import { useParams, Navigate } from 'react-router-dom'
-import logements from '../data/logements.json'
-import '../styles/logements.scss'
+import { useParams, Navigate } from "react-router-dom";
+import logements from "../data/logements.json";
+import "../styles/logements.scss";
+import Collapse from "../components/Collapse";
 
 export default function Logement() {
-  const { id } = useParams()
-  const logement = logements.find((item) => item.id === id)
+  const { id } = useParams();
+  const logement = logements.find((item) => item.id === id);
 
   if (!logement) {
-    return <Navigate to="/404" />
+    return <Navigate to="/404" />;
   }
 
-  const { title, location, description, tags, equipments, host, rating, pictures } = logement
+  const {
+    title,
+    location,
+    description,
+    tags,
+    equipments,
+    host,
+    rating,
+    pictures,
+  } = logement;
 
   return (
     <div className="logement">
@@ -33,15 +43,20 @@ export default function Logement() {
         <div>
           <div className="logement__host">
             <p className="logement__host-name">{host.name}</p>
-            <img src={host.picture} alt={host.name} className="logement__host-picture" />
+            <img
+              src={host.picture}
+              alt={host.name}
+              className="logement__host-picture"
+            />
           </div>
 
           <div className="logement__rating">
             {[1, 2, 3, 4, 5].map((i) => (
               <img
                 key={i}
-                src={i <= rating ? '/star-full.png' : '/star-empty.png'}
-                alt={i <= rating ? 'étoile pleine' : 'étoile vide'}
+                src={i <= rating ? "/star-full.png" : "/star-empty.png"}
+                alt={i <= rating ? "étoile pleine" : "étoile vide"}
+                title={`Note : ${rating} sur 5`}
                 className="star"
               />
             ))}
@@ -49,19 +64,22 @@ export default function Logement() {
         </div>
       </div>
 
-      <div className="logement__description">
-        <h2>Description</h2>
+    <div className="logement__collapses">
+      {/* Description */}
+      <Collapse title="Description">
         <p>{description}</p>
-      </div>
+      </Collapse>
 
-      <div className="logement__equipments">
-        <h2>Équipements</h2>
+      {/* Équipements */}
+      <Collapse title="Équipements">
         <ul>
           {equipments.map((eq, index) => (
             <li key={index}>{eq}</li>
           ))}
         </ul>
-      </div>
+      </Collapse>
     </div>
-  )
+    </div>
+    
+  );
 }

@@ -97,3 +97,24 @@
     }
   }
 }
+
+.logement__collapses {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  // Pour que chaque collapse prenne 48% de la largeur (avec un peu d’espace entre eux)
+  & > .collapse {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      width: 48%;
+    }
+  }
+}
