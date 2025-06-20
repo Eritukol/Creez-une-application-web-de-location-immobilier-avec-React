@@ -3,6 +3,9 @@ import logements from "../data/logements.json";
 import "../styles/logements.scss";
 import Collapse from "../components/Collapse";
 
+import Carousel from "../components/Carousel";
+
+
 export default function Logement() {
   const { id } = useParams();
   const logement = logements.find((item) => item.id === id);
@@ -24,7 +27,8 @@ export default function Logement() {
 
   return (
     <div className="logement">
-      <img src={pictures[0]} alt={title} className="logement__banner" />
+      <Carousel pictures={pictures} title={title} />
+
 
       <div className="logement__header">
         <div>
