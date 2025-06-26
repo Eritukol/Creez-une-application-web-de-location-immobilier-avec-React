@@ -9,6 +9,7 @@
     height: 223px;
     object-fit: cover;
     border-radius: 25px;
+    
   }
 
   &__collapses {
@@ -18,5 +19,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 30px;
   }
 }

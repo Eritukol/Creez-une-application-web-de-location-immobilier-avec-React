@@ -1,14 +1,18 @@
 import Collapse from "../components/Collapse";
 import "../styles/about.scss";
+import bannerImage from "../assets/banner-about.png";
+import Banner from '../components/Banner';
 
 export default function About() {
   return (
-    <div className="about">
-      <img
-        src="/banner-about.png"
-        alt="Paysage"
-        className="about__banner"
-      />
+    <main>
+      
+
+      <Banner
+              image={bannerImage}
+              alt="Bannière d'à propos"
+            />
+
 
       <div className="about__collapses">
         <Collapse title="Fiabilité">
@@ -34,6 +38,6 @@ export default function About() {
           sont bien respectés.</p>
         </Collapse>
       </div>
-    </div>
+    </main>
   );
 }

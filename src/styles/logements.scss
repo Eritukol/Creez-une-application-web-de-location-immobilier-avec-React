@@ -1,54 +1,107 @@
 .logement {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 40px 20px;
+  gap: 50px;
+  width: 100%;
+  padding: 20px;
   max-width: 1240px;
   margin: 0 auto;
 
   &__banner {
     width: 100%;
-    height: 250px;
-    border-radius: 10px;
+    height: 255px;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   &__header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 15px;
 
     @media screen and (min-width: 768px) {
       flex-direction: row;
+      align-items: flex-start;
     }
   }
 
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
   &__title {
-    font-size: 24px;
+    font-size: 19px;
     font-weight: bold;
     margin: 0;
     color: #ff6060;
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   &__location {
-    font-size: 16px;
-    margin-top: 5px;
+    font-size: 18px;
     color: #000;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   &__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
 
     &-item {
       background-color: #ff6060;
       color: white;
       padding: 5px 10px;
       border-radius: 10px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
+
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__host-rating {
+    display: flex;
+    flex-direction: row; // pour mobile
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+      margin-top: 0;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
+
+    img.star {
+      width: 15px;
+
+      @media screen and (min-width: 768px) {
+        width: 20px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        width: 24px;
+      }
     }
   }
 
@@ -58,63 +111,46 @@
     gap: 10px;
 
     &-name {
-      font-size: 16px;
-      font-weight: 500;
+      text-align: right;
+      font-size: 14px;
       color: #ff6060;
+      font-weight: 600;
+
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
     }
 
     &-picture {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
+
+      @media screen and (min-width: 1024px) {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 
-  &__rating {
+  &__collapses {
     display: flex;
-    gap: 5px;
-    margin-top: 10px;
-
-    .star {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  &__description,
-  &__equipments {
+    flex-direction: column;
+    gap: 20px;
     margin-top: 20px;
 
-    h2 {
-      font-size: 18px;
-      color: #ff6060;
-    }
-
-    p,
-    ul {
-      margin-top: 10px;
-    }
-  }
-}
-
-.logement__collapses {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 30px;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  // Pour que chaque collapse prenne 48% de la largeur (avec un peu d’espace entre eux)
-  & > .collapse {
-    width: 100%;
-
     @media screen and (min-width: 768px) {
-      width: 48%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    > .collapse {
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        width: 48%;
+      }
     }
   }
 }

@@ -2,11 +2,20 @@
   display: flex;
   flex-wrap: wrap; // Retourne à la ligne quand il n’y a plus de place
   justify-content: space-between; // Centre les cartes horizontalement
-  gap: 30px; // Espace entre les cartes
-  background-color: #f7f7f7; // Fond clair de la galerie
+  gap: 50px; // Espace entre les cartes
+  background-color: #F6F6F6;
   margin-top: 50px;
   padding: 35px;
-  gap: 50px;
+  
 }
 
 
+@media (max-width: 768px) {
+  .gallery-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  
+}

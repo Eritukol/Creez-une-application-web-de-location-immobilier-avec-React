@@ -40,3 +40,10 @@ article {
   }
 }
 
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
